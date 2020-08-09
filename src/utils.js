@@ -1,8 +1,7 @@
 import _ from 'lodash';
-import when from '@flipbyte/when-condition';
 import { FIELD } from './registry';
 
-export const setFieldValueWrapper = (setFieldValue, name) => (value) => setFieldValue(name, value);
+export const setFieldValueWrapper = (setFieldValue, name) => (value) => setFieldValue(name, value)
 export const joinNames = (...args) => _.join(_.filter(args, arg => (_.isString(arg) && arg) || _.isInteger(arg)), '.')
 export const getName = (type, name, ...args) => type === FIELD && !name ? null : joinNames(...args, name);
 
